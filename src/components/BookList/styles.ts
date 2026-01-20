@@ -29,6 +29,12 @@ export const BookImage = styled.img`
   border-radius: 8px;
 `
 
+export const TextoDes = styled.p`
+  text-align: justify;
+  text-justify: inter-word;
+  line-height: 1.6;
+`
+
 export const BookContent = styled.div`
   flex: 1;
   display: flex;

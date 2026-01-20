@@ -1,5 +1,3 @@
-import Button from '../Button'
-
 import * as S from './styles'
 
 interface ChatProps {
@@ -35,9 +33,9 @@ const Chat = ({ onClose }: ChatProps) => {
             <textarea placeholder="Digite sua mensagem..." />
           </label>
 
-          <Button type="button" title="Enviar mensagem">
+          <S.Button type="button" title="Enviar mensagem">
             Enviar mensagem
-          </Button>
+          </S.Button>
         </S.Form>
       </S.Sidebar>
     </S.CartContainer>
