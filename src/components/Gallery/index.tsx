@@ -1,6 +1,4 @@
 import { useState } from 'react'
-
-import Section from '../Section'
 import { GalleryItem } from '../../pages/Home'
 
 import play from '../../assets/images/play.png'
@@ -46,33 +44,31 @@ const Gallery = ({ defaultCover, name, items }: Props) => {
 
   return (
     <>
-      <Section title="Galeria" background="black">
-        <S.Items>
-          {items.map((media, index) => (
-            <S.Item
-              key={media.url}
-              onClick={() => {
-                setModal({
-                  isVisible: true,
-                  type: media.type,
-                  url: media.url
-                })
-              }}
-            >
+      <S.Items>
+        {items.map((media, index) => (
+          <S.Item
+            key={media.url}
+            onClick={() => {
+              setModal({
+                isVisible: true,
+                type: media.type,
+                url: media.url
+              })
+            }}
+          >
+            <img
+              src={getMediaCover(media)}
+              alt={`Mídia ${index + 1} de ${name}`}
+            />
+            <S.Action>
               <img
-                src={getMediaCover(media)}
-                alt={`Mídia ${index + 1} de ${name}`}
+                src={getMediaIcon(media)}
+                alt="Clique para maximizar a mídia"
               />
-              <S.Action>
-                <img
-                  src={getMediaIcon(media)}
-                  alt="Clique para maximizar a mídia"
-                />
-              </S.Action>
-            </S.Item>
-          ))}
-        </S.Items>
-      </Section>
+            </S.Action>
+          </S.Item>
+        ))}
+      </S.Items>
       <S.Modal className={modal.isVisible ? 'is-visible' : ''}>
         <S.ModalContent className="container">
           <header>

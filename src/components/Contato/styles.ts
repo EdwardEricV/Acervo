@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { colors } from '../../styles'
+import { colors, breakpoints } from '../../styles'
 
 export const CartContainer = styled.div`
   position: fixed;
@@ -54,5 +54,24 @@ export const Form = styled.form`
 
   textarea {
     min-height: 120px;
+  }
+`
+
+export const Button = styled.button`
+  align-self: flex-start;
+  padding: 8px 16px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  background-color: ${colors.green};
+  color: ${colors.white};
+  font-weight: bold;
+
+  &:hover {
+    opacity: 0.9;
+  }
+
+  @media (max-width: ${breakpoints.tablet}) {
+    align-self: center;
   }
 `
